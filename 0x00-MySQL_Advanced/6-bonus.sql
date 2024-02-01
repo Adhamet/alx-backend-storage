@@ -3,7 +3,7 @@
 DELIMITER //
 CREATE procedure AddBonus(IN user_id INTEGER, IN project_name VARCHAR(255), IN score INTEGER)
 BEGIN
-    INSERT INTO project(name)
+    INSERT INTO projects(name)
     SELECT project_name FROM DUAL
     WHERE NOT EXISTS(SELECT * FROM projects WHERE name = project_name LIMIT 1);
 
